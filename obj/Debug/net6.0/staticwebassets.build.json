@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "0ZSaA+vn8lLH+KkY1GR7GQW3BKSbjPPxC2Y9mJRu0zU=",
+  "Source": "pet-store",
+  "BasePath": "_content/pet-store",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
