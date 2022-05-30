@@ -8,19 +8,12 @@ namespace pet_store.Controllers;
 public class UserController : ControllerBase
 {
 	static UserContext users = UserContext.instance();
-	
+
 	public UserController()
 	{}
 
 	[HttpGet]
-	public List<User> getAll(String? firstName, String? lastName)
-	{
-		if (firstName == null || lastName == null) {
-			return users.filterUsers();	
-		}
-
-		return users.filterUsers(firstName, lastName);
-	}
+	public List<User> getAll(String? firstName, String? lastName) => users.filterUsers(firstName, lastName);
 
 	[HttpGet("{id}/login")]
 	public String login(String id) 
