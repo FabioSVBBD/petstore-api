@@ -71,9 +71,10 @@ public class UserContext
 	}
 
 	public User getUser(String id) {
-		if (UserExists(id)) return Users[id];
-
-		return null;
+		if (!UserExists(id)) 
+			return null;
+			
+		return Users[id];
 	}
 
 	public bool UserExists(String id)
