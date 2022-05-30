@@ -1,3 +1,5 @@
+using pet_store.Entities;
+
 namespace pet_store.Context;
 
 // Singleton

@@ -1,4 +1,4 @@
-namespace pet_store;
+namespace pet_store.Entities;
 
 public class User
 {

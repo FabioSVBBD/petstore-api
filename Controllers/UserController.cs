@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 using pet_store.Context;
+using pet_store.Entities;
 
 namespace pet_store.Controllers;
 
