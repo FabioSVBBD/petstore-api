@@ -9,6 +9,31 @@ public class UserContext
 		Users.Add("xyz", new User("Diana", "Prince"));
 	}
 
+	public List<User> filterUsers(String firstName = "", String lastName = "")
+	{
+		List<User> users = Users.Values.ToList();
+
+		if (firstName != "" && firstName != null) {
+			users = users.Where(u => {
+			if (u.FirstName != null) {
+				return u.FirstName.StartsWith(firstName, true, null);
+			}
+			return false;
+		}).ToList();
+		}
+
+		if (lastName != "" && lastName != null) {
+			users = users.Where(u => {
+				if (u.LastName != null) {
+					return u.LastName.StartsWith(lastName, true, null);
+				}
+				return false;
+			}).ToList();
+		}
+
+		return users;
+	}
+
 	public String AddUser(User user)
 	{
 		if (Users.ContainsValue(user))
@@ -20,7 +45,8 @@ public class UserContext
 			uuid = Guid.NewGuid().ToString();
 		} while(Users.ContainsKey(uuid));
 
-		Users.Add(Guid.NewGuid().ToString(), user);
+		Users.Add(uuid, user);
+
 		return uuid;
 	}
 

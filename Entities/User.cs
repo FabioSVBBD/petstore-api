@@ -2,8 +2,8 @@ namespace pet_store;
 
 public class User
 {
-	public String FirstName { get; set; }
-	public String LastName { get; set; }
+	public String? FirstName { get; set; }
+	public String? LastName { get; set; }
 
 	private bool Loggedin { get; set; }
 
@@ -12,6 +12,11 @@ public class User
 		FirstName = firstName;
 		LastName = lastName;
 		Loggedin = false;
+	}
+
+	public override string ToString()
+	{
+		return "[" + FirstName + " " + LastName + "]";
 	}
 
 	public bool isValid()
