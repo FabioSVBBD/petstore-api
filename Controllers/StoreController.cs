@@ -29,6 +29,8 @@ public class StoreController : ControllerBase
 		return store.Pets[id];
 	}
 
+	// get by status
+
 	[HttpPost("pets")]
 	public String addPet([FromBody] Pet pet)
 	{
@@ -41,6 +43,18 @@ public class StoreController : ControllerBase
 
 		return pet.Name + " the " + pet.Species + " Added successfully.";
 	}
+
+	// patch pet
+	// put pet
+
+	// post image of pet
+
+	// list of pets per status
+
+	// order pet
+	// cancel order for pet
+
+	// get order by id
 
 	[HttpGet("transactions")]
 	public Dictionary<String, List<Pet>> transactions()
