@@ -1,9 +1,20 @@
 namespace pet_store.Context;
 
+// Singleton
 public class UserContext
 {
 	private static Dictionary<String, User> Users = new();
-	public UserContext()
+	private static UserContext? context;
+
+	public static UserContext instance() {
+		if (context == null) {
+			context = new UserContext();
+		}
+
+		return context;
+	}
+
+	private UserContext()
 	{
 		Users.Add("abc", new User("Fabio", "Sousa"));
 		Users.Add("xyz", new User("Diana", "Prince"));

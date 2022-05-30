@@ -7,7 +7,8 @@ namespace pet_store.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-	static UserContext users = new();
+	static UserContext users = UserContext.instance();
+	
 	public UserController()
 	{}
 
